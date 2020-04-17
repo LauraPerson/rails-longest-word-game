@@ -1,0 +1,9 @@
+<h1>New Game</h1>
+<h2> <%= @letters_string %> </h2>
+<p>What is the longest word you can find?</p>
+<form class="form-inline" action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" placeholder="Type some word..." name="score">
+  <input type="submit" value="Play">
+  <input id="tags_list" name="letters_joined" value="<%= @letters.join %>" type="hidden"/>
+</form>
